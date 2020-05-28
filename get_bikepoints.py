@@ -13,5 +13,5 @@ bikepoints = json.loads(response.read())
 df = pd.read_json(bikepoint_url, orient='columns')
 
 # Keep id, name and lat/long fields
-df.drop(df.columns.difference(['id','commonName','lat','long']), 1, inplace=True)
+df.drop(df.columns.difference(['id','commonName','lat','lon']), 1, inplace=True)
 df.to_csv("bikepoints.csv",index=False)
